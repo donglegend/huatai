@@ -56,7 +56,7 @@ $(function() {
     validcardId();
   });
   //填写手机号并缓存
-  $("#tel").change(function(event) {
+  $("#tel").bind('input propertychange',function(event) {
     personInfo.mobile = $("#tel").val();
     var countdown = $(".countdown");
     var reg = {
