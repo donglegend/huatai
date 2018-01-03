@@ -1,0 +1,191 @@
+.gearArea {
+font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+font-size: 12px;
+background-color: rgba(0, 0, 0, 0.2);
+display: block;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 9900;
+overflow: hidden;
+animation-fill-mode: both
+}
+
+.area_ctrl {
+vertical-align: middle;
+background-color: #d5d8df;
+color: #000;
+margin: 0;
+height: auto;
+width: 100%;
+position: absolute;
+left: 0;
+bottom: 0;
+z-index: 9901;
+overflow: hidden;
+transform: translate3d(0, 0, 0)
+}
+
+.slideInUp {
+animation: slideInUp .3s;
+}
+@keyframes slideInUp {
+from {
+transform: translate3d(0, 100%, 0)
+}
+to {
+transform: translate3d(0, 0%, 0)
+}
+}
+.slideOutDown {
+animation: slideOutDown .3s !important;
+vertical-align: middle;
+background-color: #d5d8df;
+color: #000;
+margin: 0;
+height: auto;
+width: 100%;
+position: absolute;
+left: 0;
+bottom: -12.6rem;
+z-index: 9901;
+overflow: hidden;
+transform: translate3d(0, 0, 0)
+
+}
+
+@keyframes slideOutDown {
+from {
+transform: translate3d(0, -100%, 0)
+}
+to {
+transform: translate3d(0, 0, 0)
+}
+}
+
+.area_roll {
+display: -webkit-box;
+display: box;
+display: -webkit-flex;
+display: flex;
+width: 100%;
+height: auto;
+overflow: hidden;
+background-color: transparent;
+}
+
+.area_roll>div {
+font-size: 1.6em;
+height: 10em;
+width:100%;
+background-color: transparent;
+position: relative;
+overflow: hidden;
+-webkit-box-flex: 1;
+box-flex: 1;
+-webkit-flex: 1;
+flex: 1
+}
+
+.area_roll>div .gear {
+width: 100%;
+float: left;
+position: absolute;
+z-index: 9902;
+margin-top: 4em
+}
+
+.area_roll_mask {
+/-webkit-mask-box-image: -webkit-linear-gradient(bottom, transparent, transparent 5%, white 20%, white 80%, transparent 95%, transparent);
+-webkit-mask-box-image: linear-gradient(to top, transparent, transparent 5%, white 20%, white 80%, transparent 95%, transparent);/
+background: -webkit-gradient(linear, center top, center bottom, from(rgba(255,255,255,.8)), color-stop(0.25, rgba(255,255,255,.3)), color-stop(0.75, rgba(255,255,255,0)), to(rgba(255,255,255,.8)));
+/background: -webkit-linear-gradient(top, rgba(255,255,255,.3) 25%, rgba(255,255,255,0) 75%, rgba(255,255,255,.3));
+background: linear-gradient(top, rgba(255,255,255,.3) 25%, rgba(255,255,255,0) 75%, rgba(255,255,255,.3));/
+
+padding: 0
+}
+
+.area_grid {
+position: relative;
+top: 4em;
+width: 100%;
+height: 2em;
+margin: 0;
+box-sizing: border-box;
+z-index: 0;
+border-top: 1px solid #abaeb5;
+border-bottom: 1px solid #abaeb5
+}
+
+.area_roll>div:nth-child(3) .area_grid>div {
+left: 42%
+}
+
+.area_btn {
+color: #0575f2;
+font-size: 1.6em;
+line-height: 1em;
+text-align: center;
+padding: .8em 1em
+}
+
+.area_btn_box:before,
+.area_btn_box:after {
+content: '';
+position: absolute;
+height: 1px;
+width: 100%;
+display: block;
+background-color: #96979b;
+z-index: 15;
+-webkit-transform: scaleY(0.33);
+transform: scaleY(0.33);
+
+}
+
+.area_btn_box {
+display: -webkit-box;
+display: -moz-box;
+display: box;
+display: -webkit-flex;
+display: -moz-flex;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-pack: justify;
+-moz-box-pack: justify;
+-ms-flex-pack: justify;
+box-pack: justify;
+-webkit-justify-content: space-between;
+-moz-justify-content: space-between;
+justify-content: space-between;
+-webkit-box-align: center;
+-moz-box-align: center;
+-ms-flex-align: center;
+-webkit-align-items: center;
+-moz-align-items: center;
+align-items: center;
+background-color: #f1f2f4;
+position: relative
+}
+
+.area_btn_box:before {
+left: 0;
+top: 0;
+transform-origin: 50% 0%
+}
+
+.area_btn_box:after {
+left: 0;
+bottom: 0;
+transform-origin: 50% 100%
+}
+
+.tooth {
+height: 2em;
+line-height: 2em;
+text-align: center;
+width:100%;
+overflow: hidden
+}

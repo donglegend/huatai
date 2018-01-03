@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta content="email=no" name="format-detection">
+  <meta name="msapplication-tap-highlight" content="no">
+  <title>投保信息</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/insure.css">
+  <link rel="stylesheet" href="css/LArea.css">
+
+
+</head>
+
+<body>
+  <div class="add">
+    <div class="wrap_top">
+      <img src="images/insure/logo.png" alt="" class="logo">
+      <img src="images/insure/banner.png" alt="" class="banner">
+    </div>
+
+    <form action="" id="infoForm" name="infoForm">
+      <ul class="infoUl">
+        <li class="common_li">
+          <span class="left_name">学车城市</span>
+          <b>
+            <span id="city_model">请选择</span>
+            <input id="city_name" type="te" readonly="" placeholder="请选择" name="city" />
+            <input id="city_val" type="hidden" name="city_val" />
+            <u class="selecticon"></u>
+          </b>
+        </li>
+        <li class="common_li">
+          <span class="left_name">姓名</span>
+          <b>
+            <input type="text" id="name" placeholder="请输入被保人姓名" name="name">
+          </b>
+        </li>
+        <li class="common_li">
+          <span class="left_name">身份证号</span>
+          <b>
+            <input type="text" id="cardId" placeholder="请输入被保人身份证号" name="cardId">
+          </b>
+        </li>
+        <li class="common_li">
+          <span class="left_name">手机号</span>
+          <b>
+            <input type="tel" id="tel" maxlength="11" placeholder="请输入被保险人手机号" name="tel">
+
+          </b>
+        </li>
+        <li class="common_li no_border">
+          <span class="left_name">验证码</span>
+          <b>
+            <input type="number" id="verifyCode" placeholder="请输入验证码" name="verifyCode">
+            <i class="countdown">发送验证码</i>
+          </b>
+        </li>
+      </ul>
+      <div class="clause">
+        <i id="clausetrue" class="active"></i>
+        <span>本人已阅读并同意
+          <a href="norm.html">《驾考尊享服务协议》</a>
+        </span>
+      </div>
+      <div class="footer_button clearfix">
+        <div class="footer_money"> 价格：
+          <span class="money_value">￥100.00</span>
+        </div>
+        <div class="footer_pay">
+          <span>立即支付</span>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="dialogs">
+    <div class="dialogs_content">
+      <div class="dialogs_text">返回来的结果</div>
+      <div class="dialogs_button">
+        <span class="confirm">确定</span>
+      </div>
+    </div>
+  </div>
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="js/tool.js"></script>
+  <script src="js/validform.js"></script>
+  <script src="js/LAreaData1.js"></script>
+  <script src="js/LArea.js"></script>
+  <script src="js/insure.js"></script>
+</body>
+
+</html>
