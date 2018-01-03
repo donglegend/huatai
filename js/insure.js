@@ -28,8 +28,14 @@ $(function() {
   $("#city_model").html(personInfo.city || "请选择");
   $("#city_name").val(personInfo.city);
   $("#city_val").val(personInfo.city_val);
-  $("#tel").val(personInfo.mobile);
-
+  if(personInfo.mobile){
+    var countdown = $(".countdown");
+    var reg = {
+      mobile: /^1[3|4|5|7|8]\d{9}$/,
+    };
+    $("#tel").val(personInfo.mobile);
+    reg.mobile.test(personInfo.mobile)&&!countdown.hasClass("active") && countdown.addClass("active");
+  }
   validcardId(); //通过身份证获取出生日期 与性别
   selectCity(); //设置省市插件
   vallidform(); //添加验证规则
@@ -53,7 +59,14 @@ $(function() {
   $("#tel").change(function(event) {
     personInfo.mobile = $("#tel").val();
     var countdown = $(".countdown");
-    !countdown.hasClass("active") && countdown.addClass("active");
+    var reg = {
+      mobile: /^1[3|4|5|7|8]\d{9}$/,
+    };
+    if(reg.mobile.test(personInfo.mobile)){
+      !countdown.hasClass("active") && countdown.addClass("active");
+    }else{
+      countdown.removeClass("active");
+    }
     setStorage();
   });
 
@@ -162,7 +175,7 @@ $(function() {
   }
   /*发送验证码倒计时*/
   $(".countdown").click(function(event) {
-    if (sendtype && personInfo.mobile) setIntertime();
+    if (sendtype && $(".countdown").hasClass("active") && personInfo.mobile) setIntertime();
   });
   function setIntertime() {
     sendtype = false;
